@@ -1,3 +1,4 @@
+import myPhoto from "../assets/images/my-photo.jpeg";
 // Hero component = top section of your portfolio (first impression)
 function Hero() {
   return (
@@ -6,9 +7,9 @@ function Hero() {
 
       {/* Profile Image */}
       <img
-        src="/my-photo.jpeg"          // Image from public folder
+        src={myPhoto}
         alt="Adaika Obub"
-        className="hero-img"          // Use CSS instead of inline styles
+        className="hero-img"
       />
 
       {/* Your Name */}
