@@ -1,7 +1,13 @@
+/* =========================
+   Global / Page Settings
+   ========================= */
+
+/* Smooth scrolling for navbar anchor links */
 html {
   scroll-behavior: smooth;
 }
 
+/* Main page styling */
 body {
   margin: 0;
   font-family: Arial, sans-serif;
@@ -9,112 +15,403 @@ body {
   color: white;
 }
 
-nav {
-  display: flex;
-  justify-content: center;
-  padding: 20px;
-  font-size: 20px;
-  font-weight: bold;
+/* Keeps sizing more predictable */
+* {
+  box-sizing: border-box;
 }
 
+/* Default section spacing */
 section {
+  padding: 80px 20px;
   text-align: center;
-  margin-top: 100px;
 }
 
+/* Main heading */
 h1 {
-  font-size: 48px;
-}
-
-p {
-  font-size: 18px;
-  color: #cbd5f5;
-}
-
-/* =========================
-   Projects section
-========================= */
-#projects {
-  margin-top: 120px;
-  padding: 40px;
-  text-align: center;
-}
-
-#projects h2 {
-  font-size: 36px;
-  margin-bottom: 30px;
-}
-
-/* Grid container for all project cards */
-.projects-container {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-  gap: 30px;
-}
-
-/* Each project card */
-.projects-container div {
-  background-color: #1e293b;
-  padding: 20px;
-  border-radius: 12px;
-  max-width: 700px;
-  margin: 0 auto;
-  transition: transform 0.3s ease, box-shadow 0.3s ease;
-}
-
-/* Hover effect for project cards */
-.projects-container div:hover {
-  transform: translateY(-5px);
-  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.3);
-}
-
-#projects h3 {
-  margin-bottom: 10px;
-}
-
-/* =========================
-   Contact section
-========================= */
-#contact {
-  margin-top: 120px;
-  padding: 40px;
-  text-align: center;
-}
-
-#contact h2 {
-  font-size: 36px;
+  font-size: 56px;
   margin-bottom: 20px;
 }
 
-#contact p {
-  margin: 10px 0;
+/* Section headings */
+h2 {
+  font-size: 42px;
+  margin-bottom: 30px;
 }
 
-#contact a {
-  color: #60a5fa;
+/* Default paragraph styling */
+p {
+  font-size: 18px;
+  line-height: 1.7;
+  color: #cbd5e1;
+}
+
+/* Default link style */
+a {
   text-decoration: none;
-  font-weight: bold;
-}
-
-#contact a:hover {
-  text-decoration: underline;
-  color: #93c5fd;
 }
 
 /* =========================
-   Buttons
-========================= */
-button {
-  margin-top: 10px;
-  padding: 10px 20px;
+   Navbar
+   Matches: Navbar.jsx
+   .navbar
+   .logo
+   .nav-links
+   ========================= */
+
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 24px 40px;
+}
+
+.logo {
+  font-size: 24px;
+  font-weight: bold;
+  margin: 0;
+  color: white;
+}
+
+.nav-links {
+  display: flex;
+  gap: 28px;
+}
+
+.nav-links a {
+  color: white;
+  font-size: 18px;
+  font-weight: bold;
+  transition: color 0.3s ease;
+}
+
+.nav-links a:hover {
+  color: #60a5fa;
+}
+
+/* =========================
+   Hero Section
+   Matches: Hero.jsx
+   .hero
+   .hero-img
+   .hero-subtitle
+   .hero-buttons
+   .btn-primary
+   .btn-secondary
+   ========================= */
+
+.hero {
+  padding-top: 60px;
+  padding-bottom: 80px;
+}
+
+.hero-img {
+  width: 150px;
+  height: 150px;
+  object-fit: cover;
+  border-radius: 50%;
+  margin-bottom: 25px;
+  border: 4px solid #1e3a8a;
+}
+
+.hero h1 {
+  margin-top: 0;
+  margin-bottom: 16px;
+}
+
+.hero-subtitle {
+  font-size: 22px;
+  color: #cbd5e1;
+  margin-bottom: 30px;
+}
+
+.hero-buttons {
+  display: flex;
+  justify-content: center;
+  gap: 14px;
+  flex-wrap: wrap;
+}
+
+/* Main blue button */
+.btn-primary {
   background-color: #2563eb;
   color: white;
   border: none;
-  border-radius: 8px;
-  cursor: pointer;
+  padding: 12px 22px;
+  border-radius: 10px;
+  font-size: 16px;
   font-weight: bold;
+  cursor: pointer;
+  transition: background-color 0.3s ease, transform 0.3s ease;
 }
 
-button:hover {
+.btn-primary:hover {
   background-color: #1d4ed8;
+  transform: translateY(-2px);
+}
+
+/* Outline style button */
+.btn-secondary {
+  background-color: transparent;
+  color: #60a5fa;
+  border: 2px solid #2563eb;
+  padding: 12px 22px;
+  border-radius: 10px;
+  font-size: 16px;
+  font-weight: bold;
+  cursor: pointer;
+  transition: background-color 0.3s ease, color 0.3s ease, transform 0.3s ease;
+}
+
+.btn-secondary:hover {
+  background-color: #2563eb;
+  color: white;
+  transform: translateY(-2px);
+}
+
+/* =========================
+   About Section
+   Matches: About.jsx
+   .about
+   .about-card
+   ========================= */
+
+.about {
+  padding-top: 40px;
+}
+
+.about-card {
+  max-width: 900px;
+  margin: 0 auto;
+  background-color: #1e293b;
+  padding: 35px 30px;
+  border-radius: 18px;
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.25);
+}
+
+.about-card p {
+  margin: 0;
+  font-size: 18px;
+  line-height: 1.9;
+  color: #cbd5e1;
+}
+
+/* =========================
+   Skills Section
+   Matches: Skills.jsx
+   .skills
+   .skills-container
+   ========================= */
+
+.skills {
+  padding-top: 50px;
+}
+
+.skills-container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 16px;
+  max-width: 950px;
+  margin: 0 auto;
+}
+
+.skills-container span {
+  background-color: #1e293b;
+  color: white;
+  padding: 12px 22px;
+  border-radius: 999px;
+  font-weight: bold;
+  font-size: 17px;
+  transition: transform 0.3s ease, background-color 0.3s ease;
+}
+
+.skills-container span:hover {
+  transform: translateY(-2px);
+  background-color: #27364d;
+}
+
+/* =========================
+   Projects Section
+   Matches: Projects.jsx
+   .projects
+   .projects-grid
+   .project-card
+   .project-image
+   .project-links
+   ========================= */
+
+.projects {
+  /*padding-top: 60px;*/
+  text-align: center; /* Centers all text in the section */
+  padding: 70px 20px 60px; /* Adds top, side, and bottom spacing */
+}
+
+.projects-grid {
+  display: grid;  
+  grid-template-columns: repeat(3, 1fr);
+  gap: 30px;
+  align-items: stretch; /* Makes all cards equal height */
+  max-width: 1400px; /* Keeps layout from becoming too wide */
+  margin: 0 auto; /* Centers the grid */
+}
+
+.project-card {
+  background-color: #1e293b;
+  border-radius: 18px;
+  padding: 25px;
+  text-align: center;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+}
+
+.project-card:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 12px 24px rgba(0, 0, 0, 0.28);
+}
+
+.project-image {
+  width: 100%;
+  height: 220px;
+  object-fit: cover;
+  border-radius: 14px;
+  margin-bottom: 20px;
+}
+
+.project-card h3 {
+  font-size: 30px;
+  margin-bottom: 15px;
+}
+
+.project-card p {
+  margin-bottom: 22px;
+  flex-grow: 1;
+}
+
+.project-links {
+  margin-top: auto;
+}
+
+.project-links a {
+  display: inline-block;
+  background-color: #2563eb;
+  color: white;
+  padding: 12px 24px;
+  border-radius: 10px;
+  font-weight: bold;
+  transition: background-color 0.3s ease, transform 0.3s ease;
+}
+
+.project-links a:hover {
+  background-color: #1d4ed8;
+  transform: translateY(-2px);
+}
+
+/* =========================
+   Contact Section
+   Matches: Contact.jsx
+   .contact
+   .contact-card
+   ========================= */
+
+.contact {
+  padding-top: 70px;
+}
+
+.contact-card {
+  max-width: 650px;
+  margin: 0 auto;
+  background-color: #1e293b;
+  padding: 30px;
+  border-radius: 18px;
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.22);
+}
+
+.contact-card p {
+  margin: 18px 0;
+}
+
+.contact-card a {
+  color: #60a5fa;
+  font-weight: bold;
+  transition: color 0.3s ease;
+}
+
+.contact-card a:hover {
+  color: #93c5fd;
+  text-decoration: underline;
+}
+
+/* =========================
+   Footer
+   Matches: Footer.jsx
+   ========================= */
+
+footer {
+  margin-top: 80px;
+  padding: 25px 20px 35px;
+  text-align: center;
+  color: #94a3b8;
+  font-size: 14px;
+}
+
+/* =========================
+   Responsive Design
+   ========================= */
+
+/* Tablet */
+@media (max-width: 1024px) {
+  .projects-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .navbar {
+    padding: 20px 24px;
+  }
+
+  .project-card h3 {
+    font-size: 26px;
+  }
+}
+
+/* Mobile */
+@media (max-width: 768px) {
+  .navbar {
+    flex-direction: column;
+    gap: 18px;
+  }
+
+  .nav-links {
+    gap: 18px;
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+
+  h1 {
+    font-size: 40px;
+  }
+
+  h2 {
+    font-size: 34px;
+  }
+
+  .hero-subtitle {
+    font-size: 18px;
+  }
+
+  .about-card,
+  .contact-card,
+  .project-card {
+    padding: 22px;
+  }
+
+  .project-image {
+    height: 180px;
+  }
+
+  .skills-container span {
+    font-size: 15px;
+    padding: 10px 16px;
+  }
 }
